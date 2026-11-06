@@ -8,10 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #059669; /* Duboka, moderna zelena */
-            --primary-dark: #047857;
-            --accent: #10B981; /* Osvežavajuća svetlija zelena */
-            --mint: #ECFDF5; /* Veoma svetla menta za pozadine */
+            /* Prilagođene boje inspirisane zelenom bojom logotipa */
+            --primary: #047857; 
+            --primary-dark: #065F46;
+            --accent: #34D399;
+            --mint: #ECFDF5;
             --text-dark: #1F2937;
             --text-light: #4B5563;
             --white: #FFFFFF;
@@ -22,6 +23,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
@@ -45,24 +47,24 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 8%;
+            padding: 15px 5%;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
         }
 
         .logo-img {
-            height: 45px; /* Visina logoa */
+            height: 40px;
             width: auto;
             object-fit: contain;
         }
 
         .logo-text {
-            font-size: 1.25rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--primary);
             letter-spacing: -0.5px;
@@ -71,7 +73,7 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 30px;
+            gap: 20px;
             align-items: center;
         }
 
@@ -79,6 +81,7 @@
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
+            font-size: 0.95rem;
             transition: var(--transition);
         }
 
@@ -89,7 +92,7 @@
         .btn-nav {
             background-color: var(--primary);
             color: var(--white) !important;
-            padding: 10px 20px;
+            padding: 8px 18px;
             border-radius: 50px;
             transition: var(--transition);
         }
@@ -99,7 +102,7 @@
             transform: translateY(-2px);
         }
 
-        /* Hero sekcija */
+        /* Hero sekcija (Početna) */
         .hero {
             padding: 160px 8% 100px 8%;
             background: linear-gradient(135deg, var(--mint) 0%, #FFFFFF 100%);
@@ -112,11 +115,10 @@
 
         .hero-content {
             flex: 1;
-            animation: fadeInLeaning 1s ease-out;
         }
 
         .hero-content h1 {
-            font-size: 3.2rem;
+            font-size: 3rem;
             line-height: 1.2;
             color: var(--text-dark);
             margin-bottom: 20px;
@@ -140,124 +142,151 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            box-shadow: 0 10px 20px rgba(5, 150, 105, 0.2);
+            box-shadow: 0 10px 20px rgba(4, 120, 87, 0.2);
             transition: var(--transition);
         }
 
         .btn-primary:hover {
             background-color: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 15px 25px rgba(5, 150, 105, 0.3);
         }
 
         .hero-image {
             flex: 1;
-            background: var(--primary);
-            height: 400px;
+            background: var(--mint);
+            border: 2px dashed var(--primary);
+            height: 380px;
             border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
-            font-size: 1.5rem;
-            box-shadow: 0 20px 40px rgba(5, 150, 105, 0.15);
-            animation: floatAnim 4s ease-in-out infinite;
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
-        /* Sekcija Usluge */
-        .services {
-            padding: 100px 8%;
-            background-color: var(--white);
+        /* Sekcije zajednički stil */
+        section {
+            padding: 90px 8%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
         .section-title h2 {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             color: var(--text-dark);
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .section-title p {
             color: var(--text-light);
-            font-size: 1.1rem;
+            font-size: 1.05rem;
         }
 
-        .services-grid {
+        /* Stomatolog & Zašto mi (Grid dvoja vrata) */
+        .about-grid, .why-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
 
-        .service-card {
+        .card {
             background: var(--mint);
-            padding: 40px 30px;
+            padding: 35px 30px;
             border-radius: 20px;
+            border: 1px solid rgba(52, 211, 153, 0.2);
             transition: var(--transition);
-            border: 1px solid rgba(16, 185, 129, 0.1);
         }
 
-        .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(5, 150, 105, 0.1);
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(4, 120, 87, 0.1);
             background: var(--white);
-            border-color: var(--accent);
         }
 
-        .service-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
+        .card h3 {
+            color: var(--primary);
             margin-bottom: 12px;
-            color: var(--text-dark);
+            font-size: 1.25rem;
         }
 
-        .service-card p {
+        .card p {
             color: var(--text-light);
             font-size: 0.95rem;
         }
 
-        /* Kontakt sekcija */
-        .contact {
-            padding: 100px 8%;
-            background-color: #F8FAFC;
+        /* Usluge */
+        .services {
+            background-color: #F9FAFB;
         }
 
-        .contact-container {
+        /* Radovi / Galerija */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .work-box {
+            background: var(--mint);
+            height: 220px;
+            border-radius: 15px;
             display: flex;
-            gap: 50px;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 600;
+            border: 1px solid rgba(4, 120, 87, 0.15);
+        }
+
+        /* Recenzije */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .review-card {
+            background: var(--mint);
+            padding: 30px;
+            border-radius: 20px;
+            font-style: italic;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .review-card span {
+            display: block;
+            margin-top: 15px;
+            font-weight: 700;
+            font-style: normal;
+            color: var(--primary);
+            font-size: 0.9rem;
+        }
+
+        /* Kontakt */
+        .contact {
+            background-color: var(--mint);
+        }
+
+        .contact-box {
             background: var(--white);
-            padding: 50px;
-            border-radius: 30px;
+            padding: 40px;
+            border-radius: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-        }
-
-        .contact-text {
-            flex: 1;
-        }
-
-        .contact-text h2 {
-            font-size: 2.2rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-text p {
-            color: var(--text-light);
-            margin-bottom: 30px;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .info-item {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
             display: flex;
             align-items: center;
-            gap: 15px;
-            font-weight: 500;
+            gap: 12px;
         }
 
         /* Footer */
@@ -265,103 +294,165 @@
             background-color: var(--text-dark);
             color: var(--white);
             text-align: center;
-            padding: 30px 8%;
+            padding: 25px 8%;
             font-size: 0.9rem;
         }
 
-        /* Animacije */
-        @keyframes fadeInLeaning {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes floatAnim {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        /* Responzivnost za mobilne */
-        @media (max-width: 768px) {
+        /* Responzivnost */
+        @media (max-width: 900px) {
+            .nav-links {
+                display: none; /* Može se kasnije dodati mobilni meni */
+            }
             .hero {
                 flex-direction: column;
                 text-align: center;
                 padding-top: 130px;
             }
             .hero-content h1 {
-                font-size: 2.4rem;
-            }
-            .nav-links {
-                display: none;
-            }
-            .contact-container {
-                flex-direction: column;
-                padding: 30px;
+                font-size: 2.3rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigacija sa logoom i nazivom -->
+    <!-- Navigacija -->
     <header>
-        <a href="#" class="logo-container">
+        <a href="#pocetna" class="logo-container">
             <img src="logo.png" alt="Marinac Dental Studio Logo" class="logo-img">
             <span class="logo-text">Marinac Dental Studio</span>
         </a>
         <ul class="nav-links">
+            <li><a href="#pocetna">Početna</a></li>
+            <li><a href="#stomatolog">Stomatolog</a></li>
+            <li><a href="#zasto-mi">Zašto mi?</a></li>
             <li><a href="#usluge">Usluge</a></li>
-            <li><a href="#o-nama">O nama</a></li>
-            <li><a href="#kontakt" class="btn-nav">Zakaži pregled</a></li>
+            <li><a href="#radovi">Radovi</a></li>
+            <li><a href="#recenzije">Recenzije</a></li>
+            <li><a href="#kontakt" class="btn-nav">Kontakt</a></li>
         </ul>
     </header>
 
-    <!-- Hero Sekcija -->
-    <section class="hero">
+    <!-- Početna (Hero) -->
+    <section class="hero" id="pocetna">
         <div class="hero-content">
             <h1>Vaš blistav osmeh je <span>naša strast</span></h1>
-            <p>Dobrodošli u Marinac Dental Studio – modernu stomatološku ordinaciju opremljenu najsavremenijom tehnologijom. Pružamo bezbolne i vrhunske stomatološke usluge u prijatnom ambijentu.</p>
-            <a href="#kontakt" class="btn-primary">Zakaži besplatne konsultacije</a>
+            <p>Dobrodošli u Marinac Dental Studio – modernu stomatološku ordinaciju u Zemunu opremljenu po najvišim standardima.</p>
+            <a href="#kontakt" class="btn-primary">Zakaži pregled</a>
         </div>
         <div class="hero-image">
             <span>✨ Marinac Dental Studio</span>
         </div>
     </section>
 
+    <!-- Stomatolog -->
+    <section id="stomatolog">
+        Vaš stručni tim
+        <div class="section-title">
+            <h2>Upoznajte našeg stomatologa</h2>
+            <p>Stručnost, posvećenost i dugogodišnje iskustvo u službi vašeg zdravlja</p>
+        </div>
+        <div class="about-grid">
+            <div class="card">
+                <h3>Dr [Ime Lekara]</h3>
+                <p>Specijalista sa dugogodišnjom praksom u oblasti estetske stomatologije i implantologije. Redovni učesnik domaćih i međunarodnih edukacija.</p>
+            </div>
+            <div class="card">
+                <h3>Prijatan pristup</h3>
+                <p>Verujemo da poseta stomatologu može biti opuštajuća i potpuno bezbolna, uz individualan pristup svakom pacijentu.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zašto mi? -->
+    <section id="zasto-mi" class="services" style="background-color: var(--white);">
+        <div class="section-title">
+            <h2>Zašto izabrati nas?</h2>
+            <p>Razlozi zbog kojih nam pacijenti s poverenjem prepuštaju brigu o svojim zubima</p>
+        </div>
+        <div class="why-grid">
+            <div class="card">
+                <h3>💎 Vrhunski materijali</h3>
+                <p>Koristimo isključivo proverene, sertifikovane stomatološke materijale svetskih brendova.</p>
+            </div>
+            <div class="card">
+                <h3>⚡ Bezbolne intervencije</h3>
+                <p>Primena najsavremenijih anestetika i tehnika osigurava komfor tokom svakog zahvata.</p>
+            </div>
+            <div class="card">
+                <h3>🛡️ Garancija kvaliteta</h3>
+                <p>Pružamo dugoročnu garanciju na sve vrste protetskih radova i ugrađene implantate.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Usluge -->
-    <section class="services" id="usluge">
+    <section id="usluge" class="services">
         <div class="section-title">
             <h2>Naše usluge</h2>
             <p>Sve vrste stomatoloških usluga na jednom mestu</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">✨</div>
-                <h3>Estetska stomatologija</h3>
+        <div class="why-grid">
+            <div class="card">
+                <h3>✨ Estetska stomatologija</h3>
                 <p>Izbeljivanje zuba, fasete i bezmetalne krunice za vaš savršen i prirodan osmeh.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">🛡️</div>
-                <h3>Konzervativno lečenje</h3>
+            <div class="card">
+                <h3>🛡️ Konzervativno lečenje</h3>
                 <p>Bezbolno lečenje karijesa, moderne bele plombice i prevencija oboljenja zuba.</p>
             </div>
-            <div class="service-card">
-                <div class="service-icon">🦷</div>
-                <h3>Implantologija</h3>
+            <div class="card">
+                <h3>🦷 Implantologija</h3>
                 <p>Ugradnja najkvalitetnijih zubnih implantata uz garanciju i maksimalnu preciznost.</p>
             </div>
         </div>
     </section>
 
-    <!-- Kontakt -->
-    <section class="contact" id="kontakt">
-        <div class="contact-container">
-            <div class="contact-text">
-                <h2>Kontaktirajte nas</h2>
-                <p>Zakažite svoj pregled na vreme i osigurajte zdravlje i lepotu svojih zuba. Čekamo vas u Marinac Dental Studiju!</p>
-                <div class="info-item">📍 Adresa: Prve pruge 4, Zemun</div>
-                <div class="info-item">📞 Telefon: +381 64 537 99 01</div>
-                <div class="info-item">⏰ Radno vreme: 11:00 - 19:00</div>
+    <!-- Radovi -->
+    <section id="radovi">
+        <div class="section-title">
+            <h2>Naši radovi</h2>
+            <p>Pogledajte neke od uspešno urađenih intervencija i transformacija osmeha</p>
+        </div>
+        <div class="works-grid">
+            <div class="work-box">🦷 Slučaj 1: Bezmetalne krunice</div>
+            <div class="work-box">✨ Slučaj 2: Izbeljivanje i fasete</div>
+            <div class="work-box">🛡️ Slučaj 3: Implantologija</div>
+        </div>
+    </section>
+
+    <!-- Recenzije -->
+    <section id="recenzije" style="background-color: #F9FAFB;">
+        <div class="section-title">
+            <h2>Šta kažu naši pacijenti</h2>
+            <p>Utisci ljudi koji su nam poklonili svoje poverenje</p>
+        </div>
+        <div class="reviews-grid">
+            <div class="review-card">
+                "Izuzetno profesionalna usluga, prijatna atmosfera i potpuno bezbolno iskustvo. Preporuka od srca!"
+                <span>— Jelena M.</span>
             </div>
+            <div class="review-card">
+                "Najbolja stomatološka ordinacija u Zemunu! Sve pohvale za stručnost i ljubaznost osoblja."
+                <span>— Stefan P.</span>
+            </div>
+            <div class="review-card">
+                "Sređivao sam zube i prezadovoljan sam rezultatom. Vrhunski kvalitet i pristupačne cene."
+                <span>— Marko V.</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="contact">
+        <div class="section-title">
+            <h2>Kontaktirajte nas</h2>
+            <p>Zakažite svoj pregled na vreme i osigurajte zdravlje i lepotu svojih zuba</p>
+        </div>
+        <div class="contact-box">
+            <div class="info-item">📍 <strong>Adresa:</strong> Prve pruge 4, Zemun</div>
+            <div class="info-item">📞 <strong>Telefon:</strong> +381 64 537 99 01</div>
+            <div class="info-item">⏰ <strong>Radno vreme:</strong> 11:00 - 19:00</div>
         </div>
     </section>
 
