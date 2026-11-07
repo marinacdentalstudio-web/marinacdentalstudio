@@ -33,7 +33,7 @@
             overflow-x: hidden;
         }
 
-        /* Navigacija - fiksirana gore, logo levo, meni desno */
+        /* Navigacija - prilagodljiva za sve ekrane */
         header {
             position: fixed;
             top: 0;
@@ -57,13 +57,13 @@
         }
 
         .logo-img {
-            height: 42px;
+            height: 40px;
             width: auto;
             object-fit: contain;
         }
 
         .logo-text {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             font-weight: 700;
             color: var(--primary);
             letter-spacing: -0.5px;
@@ -72,15 +72,16 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 22px;
+            gap: 18px;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         .nav-links a {
             text-decoration: none;
             color: var(--text-dark);
             font-weight: 500;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             transition: var(--transition);
         }
 
@@ -91,7 +92,7 @@
         .btn-nav {
             background-color: var(--primary);
             color: var(--white) !important;
-            padding: 9px 20px;
+            padding: 8px 16px;
             border-radius: 50px;
             transition: var(--transition);
         }
@@ -108,7 +109,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 50px;
+            gap: 40px;
             min-height: 100vh;
         }
 
@@ -117,7 +118,7 @@
         }
 
         .hero-content h1 {
-            font-size: 3rem;
+            font-size: 2.8rem;
             line-height: 1.2;
             color: var(--text-dark);
             margin-bottom: 20px;
@@ -128,7 +129,7 @@
         }
 
         .hero-content p {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: var(--text-light);
             margin-bottom: 30px;
         }
@@ -137,7 +138,7 @@
             display: inline-block;
             background-color: var(--primary);
             color: var(--white);
-            padding: 14px 32px;
+            padding: 14px 30px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
@@ -154,46 +155,48 @@
             flex: 1;
             background: var(--mint);
             border: 2px dashed var(--primary);
-            height: 380px;
+            height: 350px;
             border-radius: 30px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--primary);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
+            text-align: center;
+            padding: 20px;
         }
 
         /* Sekcije */
         section {
-            padding: 90px 8%;
+            padding: 80px 8%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 45px;
         }
 
         .section-title h2 {
-            font-size: 2.3rem;
+            font-size: 2.2rem;
             color: var(--text-dark);
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .section-title p {
             color: var(--text-light);
-            font-size: 1.05rem;
+            font-size: 1rem;
         }
 
         .grid-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
         }
 
         .card {
             background: var(--mint);
-            padding: 35px 30px;
+            padding: 30px 25px;
             border-radius: 20px;
             border: 1px solid rgba(52, 211, 153, 0.2);
             transition: var(--transition);
@@ -207,25 +210,25 @@
 
         .card h3 {
             color: var(--primary);
-            margin-bottom: 12px;
-            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
         }
 
         .card p {
             color: var(--text-light);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         /* Radovi / Galerija */
         .works-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 20px;
         }
 
         .work-box {
             background: var(--mint);
-            height: 220px;
+            height: 200px;
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -233,12 +236,14 @@
             color: var(--primary);
             font-weight: 600;
             border: 1px solid rgba(4, 120, 87, 0.15);
+            text-align: center;
+            padding: 15px;
         }
 
         /* Recenzije */
         .review-card {
             background: var(--mint);
-            padding: 30px;
+            padding: 25px;
             border-radius: 20px;
             font-style: italic;
             color: var(--text-dark);
@@ -246,11 +251,11 @@
 
         .review-card span {
             display: block;
-            margin-top: 15px;
+            margin-top: 12px;
             font-weight: 700;
             font-style: normal;
             color: var(--primary);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
 
         /* Kontakt */
@@ -260,31 +265,28 @@
 
         .contact-box {
             background: var(--white);
-            padding: 40px;
+            padding: 35px;
             border-radius: 25px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            max-width: 700px;
+            max-width: 650px;
             margin: 0 auto;
         }
 
         .info-item {
             margin-bottom: 15px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             display: flex;
             align-items: center;
             gap: 12px;
+            word-break: break-word;
         }
 
         /* Footer */
-        footer {
-            background-color: var(--text-dark);
-            color: var(--white);
-            text-align: center;
-            padding: 25px 8%;
-            font-size: 0.9rem;
-        }
+        <footer>
+            <p>&copy; 2026 Marinac Dental Studio. Sva prava zadržana.</p>
+        </footer>
 
-        /* Prilagođavanje za manje ekrane / mobilne */
+        /* Optimizacija za tablete i mobilne uređaje (Responzivnost) */
         @media (max-width: 1024px) {
             .nav-links {
                 gap: 12px;
@@ -292,26 +294,39 @@
             .nav-links a {
                 font-size: 0.85rem;
             }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
         }
 
         @media (max-width: 768px) {
+            header {
+                padding: 12px 4%;
+                flex-direction: column;
+                gap: 10px;
+            }
             .nav-links {
-                display: none; /* Sakriveno na telefonima, može se kasnije dodati meni dugme */
+                justify-content: center;
+                gap: 10px;
+                font-size: 0.8rem;
             }
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 130px;
+                padding-top: 180px; /* Veći razmak zbog dvoredog menija na telefonu */
             }
             .hero-content h1 {
-                font-size: 2.3rem;
+                font-size: 2.1rem;
+            }
+            .contact-box {
+                padding: 20px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Navigacija (Logo levo, opcije desno) -->
+    <!-- Navigacija -->
     <header>
         <a href="#pocetna" class="logo-container">
             <img src="logo.png" alt="Marinac Dental Studio Logo" class="logo-img">
