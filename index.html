@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* Prilagođene boje inspirisane zelenom bojom logotipa */
             --primary: #047857; 
             --primary-dark: #065F46;
             --accent: #34D399;
@@ -34,13 +33,13 @@
             overflow-x: hidden;
         }
 
-        /* Navigacija */
+        /* Navigacija - fiksirana gore, logo levo, meni desno */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(10px);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             z-index: 1000;
@@ -53,18 +52,18 @@
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             text-decoration: none;
         }
 
         .logo-img {
-            height: 40px;
+            height: 42px;
             width: auto;
             object-fit: contain;
         }
 
         .logo-text {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             font-weight: 700;
             color: var(--primary);
             letter-spacing: -0.5px;
@@ -73,7 +72,7 @@
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 22px;
             align-items: center;
         }
 
@@ -92,7 +91,7 @@
         .btn-nav {
             background-color: var(--primary);
             color: var(--white) !important;
-            padding: 8px 18px;
+            padding: 9px 20px;
             border-radius: 50px;
             transition: var(--transition);
         }
@@ -165,7 +164,7 @@
             font-weight: 600;
         }
 
-        /* Sekcije zajednički stil */
+        /* Sekcije */
         section {
             padding: 90px 8%;
         }
@@ -186,8 +185,7 @@
             font-size: 1.05rem;
         }
 
-        /* Stomatolog & Zašto mi (Grid dvoja vrata) */
-        .about-grid, .why-grid {
+        .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
@@ -218,11 +216,6 @@
             font-size: 0.95rem;
         }
 
-        /* Usluge */
-        .services {
-            background-color: #F9FAFB;
-        }
-
         /* Radovi / Galerija */
         .works-grid {
             display: grid;
@@ -243,19 +236,12 @@
         }
 
         /* Recenzije */
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
         .review-card {
             background: var(--mint);
             padding: 30px;
             border-radius: 20px;
             font-style: italic;
             color: var(--text-dark);
-            position: relative;
         }
 
         .review-card span {
@@ -298,10 +284,19 @@
             font-size: 0.9rem;
         }
 
-        /* Responzivnost */
-        @media (max-width: 900px) {
+        /* Prilagođavanje za manje ekrane / mobilne */
+        @media (max-width: 1024px) {
             .nav-links {
-                display: none; /* Može se kasnije dodati mobilni meni */
+                gap: 12px;
+            }
+            .nav-links a {
+                font-size: 0.85rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Sakriveno na telefonima, može se kasnije dodati meni dugme */
             }
             .hero {
                 flex-direction: column;
@@ -316,7 +311,7 @@
 </head>
 <body>
 
-    <!-- Navigacija -->
+    <!-- Navigacija (Logo levo, opcije desno) -->
     <header>
         <a href="#pocetna" class="logo-container">
             <img src="logo.png" alt="Marinac Dental Studio Logo" class="logo-img">
@@ -347,12 +342,11 @@
 
     <!-- Stomatolog -->
     <section id="stomatolog">
-        Vaš stručni tim
         <div class="section-title">
             <h2>Upoznajte našeg stomatologa</h2>
             <p>Stručnost, posvećenost i dugogodišnje iskustvo u službi vašeg zdravlja</p>
         </div>
-        <div class="about-grid">
+        <div class="grid-container">
             <div class="card">
                 <h3>Dr [Ime Lekara]</h3>
                 <p>Specijalista sa dugogodišnjom praksom u oblasti estetske stomatologije i implantologije. Redovni učesnik domaćih i međunarodnih edukacija.</p>
@@ -365,12 +359,12 @@
     </section>
 
     <!-- Zašto mi? -->
-    <section id="zasto-mi" class="services" style="background-color: var(--white);">
+    <section id="zasto-mi" style="background-color: var(--white);">
         <div class="section-title">
             <h2>Zašto izabrati nas?</h2>
             <p>Razlozi zbog kojih nam pacijenti s poverenjem prepuštaju brigu o svojim zubima</p>
         </div>
-        <div class="why-grid">
+        <div class="grid-container">
             <div class="card">
                 <h3>💎 Vrhunski materijali</h3>
                 <p>Koristimo isključivo proverene, sertifikovane stomatološke materijale svetskih brendova.</p>
@@ -387,12 +381,12 @@
     </section>
 
     <!-- Usluge -->
-    <section id="usluge" class="services">
+    <section id="usluge" style="background-color: #F9FAFB;">
         <div class="section-title">
             <h2>Naše usluge</h2>
             <p>Sve vrste stomatoloških usluga na jednom mestu</p>
         </div>
-        <div class="why-grid">
+        <div class="grid-container">
             <div class="card">
                 <h3>✨ Estetska stomatologija</h3>
                 <p>Izbeljivanje zuba, fasete i bezmetalne krunice za vaš savršen i prirodan osmeh.</p>
@@ -427,7 +421,7 @@
             <h2>Šta kažu naši pacijenti</h2>
             <p>Utisci ljudi koji su nam poklonili svoje poverenje</p>
         </div>
-        <div class="reviews-grid">
+        <div class="grid-container">
             <div class="review-card">
                 "Izuzetno profesionalna usluga, prijatna atmosfera i potpuno bezbolno iskustvo. Preporuka od srca!"
                 <span>— Jelena M.</span>
