@@ -208,9 +208,8 @@
             width: 100%;
             max-width: 320px;
             height: 380px;
-            object-fit: cover;
-            /* OVDE PODEŠAVAMO POZICIJU SLIKE: probaj 'left center', 'center' ili 'right center' */
-            object-position: left center; 
+            object-fit: contain; /* Prikazuje celu sliku bez odsecanja */
+            background-color: var(--white); /* Pozadina oko slike ako je drugačijeg oblika */
             border-radius: 20px;
             box-shadow: 0 15px 30px rgba(4, 120, 87, 0.15);
             border: 4px solid var(--white);
