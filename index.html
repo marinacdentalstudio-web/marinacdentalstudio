@@ -33,7 +33,7 @@
             overflow-x: hidden;
         }
 
-        /* Navigacija - prilagodljiva za sve ekrane */
+        /* Navigacija */
         header {
             position: fixed;
             top: 0;
@@ -188,6 +188,55 @@
             font-size: 1rem;
         }
 
+        /* Stomatolog sekcija sa slikom */
+        .doctor-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            background: var(--mint);
+            padding: 50px;
+            border-radius: 30px;
+            border: 1px solid rgba(52, 211, 153, 0.2);
+        }
+
+        .doctor-image-box {
+            flex: 1;
+            text-align: center;
+        }
+
+        .doctor-img {
+            width: 100%;
+            max-width: 320px;
+            height: 380px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(4, 120, 87, 0.15);
+            border: 4px solid var(--white);
+        }
+
+        .doctor-text-box {
+            flex: 1.5;
+        }
+
+        .doctor-text-box h3 {
+            font-size: 1.8rem;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+        }
+
+        .doctor-subtitle {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .doctor-text-box p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -286,16 +335,12 @@
             <p>&copy; 2026 Marinac Dental Studio. Sva prava zadržana.</p>
         </footer>
 
-        /* Optimizacija za tablete i mobilne uređaje (Responzivnost) */
-        @media (max-width: 1024px) {
-            .nav-links {
-                gap: 12px;
-            }
-            .nav-links a {
-                font-size: 0.85rem;
-            }
-            .hero-content h1 {
-                font-size: 2.4rem;
+        /* Responzivnost */
+        @media (max-width: 900px) {
+            .doctor-container {
+                flex-direction: column;
+                padding: 30px;
+                text-align: center;
             }
         }
 
@@ -313,7 +358,7 @@
             .hero {
                 flex-direction: column;
                 text-align: center;
-                padding-top: 180px; /* Veći razmak zbog dvoredog menija na telefonu */
+                padding-top: 180px;
             }
             .hero-content h1 {
                 font-size: 2.1rem;
@@ -358,17 +403,17 @@
     <!-- Stomatolog -->
     <section id="stomatolog">
         <div class="section-title">
-            <h2>Upoznajte našeg stomatologa</h2>
-            <p>Stručnost, posvećenost i dugogodišnje iskustvo u službi vašeg zdravlja</p>
+            <h2>Upoznajte stomatologa koji brine o vašem osmehu</h2>
+            <p>Posvećenost, stručnost i poverenje na prvom mestu</p>
         </div>
-        <div class="grid-container">
-            <div class="card">
-                <h3>Dr [Ime Lekara]</h3>
-                <p>Specijalista sa dugogodišnjom praksom u oblasti estetske stomatologije i implantologije. Redovni učesnik domaćih i međunarodnih edukacija.</p>
+        <div class="doctor-container">
+            <div class="doctor-image-box">
+                <img src="L64A1229.jpg" alt="Boško Marinac - Stomatolog" class="doctor-img">
             </div>
-            <div class="card">
-                <h3>Prijatan pristup</h3>
-                <p>Verujemo da poseta stomatologu može biti opuštajuća i potpuno bezbolna, uz individualan pristup svakom pacijentu.</p>
+            <div class="doctor-text-box">
+                <h3>Boško Marinac</h3>
+                <div class="doctor-subtitle">Stomatolog, osnivač Marinac Dental Studija</div>
+                <p>Kod nas vas od prvog pregleda do poslednje kontrole vodi isti stomatolog. Prvo saslušamo vaš problem, a onda predlažemo rešenje. Plan, opcije i cenu znate pre nego što počnemo, a ako postoji jednostavniji i jeftiniji put, reći ćemo vam.</p>
             </div>
         </div>
     </section>
